@@ -1,4 +1,4 @@
-digraph "pet-shop" {
+digraph "Family-Tree" {
 	node [shape=plaintext]
 	node [shape=egg]
 	"Hamza Aziz"

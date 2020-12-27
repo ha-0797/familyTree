@@ -1,6 +1,7 @@
 import os
 import json
 from graphviz import Digraph
+import tkinter as tk
 
 class Person(object):
 	"""docstring for Person"""
@@ -31,22 +32,21 @@ def save():
 		f.write(json.dumps(p))
 
 def load():
+	global people
 	with open('tree.txt', 'r') as f:
 		jl = f.read()
 		p = json.loads(jl)
-	people = {}
 	for i in p.keys():
 		person = Person(i)
 		person.__dict__ = p[i]
 		people[i] = person
-	return people
 
 def plot():
 	
 	c = 65
 	peeps = {}
 	edges = []
-	dot = Digraph(name='pet-shop', node_attr={'shape': 'plaintext'})
+	dot = Digraph(name='Family-Tree', node_attr={'shape': 'plaintext'})
 	
 	for i in people.keys():
 		dot.attr('node', shape='egg')
@@ -63,44 +63,57 @@ def plot():
 	dot.render('test-output/familyTree.gv', view=True)
 
 if __name__ == "__main__":
+
+	window = tk.Tk()
+	Load = tk.Button(text= "Load", command=load)
+	Save = tk.Button(text= "Save", command=save)
+	addPerson = tk.Button(text= "Add Person", command=load)
+	Plot = tk.Button(text= "Plot", command=plot)
+	Load.pack()
+	Save.pack()
+	addPerson.pack()
+	Plot.pack()
+	window.mainloop()
+
+
 	# Load
-	while(1):
-		print("1- Load\n2- Save\n3- Add Person\n4- Add Relation\n5- Plot\n6- Exit\n")
-		choice = input()
-		os.system('clear')
-		if choice == '1':
-			people = load()
-		elif choice == '2':
-			save()
-		elif choice == '3':
-			print("Enter Name:", end=" ")
-			name = input()
-			if name not in people.keys():
-				p = Person(name)
-				people[name] = p
-		elif choice == '4':
-			print("Add relation to:", end=" ")
-			name = input()
-			print("Relative Name:", end=" ")
-			relative = input()
-			person = people[name]
-			print("1- Add Parent\n2- Add Sibling\n3- Add Child\n4- Add Spouse\n5- Exit\n")
-			choice = input()
-			os.system('clear')
-			if choice == '1':
-				people[name].addParent(relative)
-				people[relative].addChild(name)
-			elif choice == '2':
-				people[name].addSibling(relative)
-				people[relative].addSibling(name)
-			elif choice == '3':
-				people[name].addChild(relative)
-				people[relative].addParent(name)
-			elif choice == '4':
-				people[name].addSpouse(relative)
-				people[relative].addSpouse(name)
-		elif choice == '5':
-			plot()
-		elif choice == '6':
-			break
-		print(people)
+	# while(1):
+	# 	print("1- Load\n2- Save\n3- Add Person\n4- Add Relation\n5- Plot\n6- Exit\n")
+	# 	choice = input()
+	# 	os.system('clear')
+	# 	if choice == '1':
+	# 		people = load()
+	# 	elif choice == '2':
+	# 		save()
+	# 	elif choice == '3':
+	# 		print("Enter Name:", end=" ")
+	# 		name = input()
+	# 		if name not in people.keys():
+	# 			p = Person(name)
+	# 			people[name] = p
+	# 	elif choice == '4':
+	# 		print("Add relation to:", end=" ")
+	# 		name = input()
+	# 		print("Relative Name:", end=" ")
+	# 		relative = input()
+	# 		person = people[name]
+	# 		print("1- Add Parent\n2- Add Sibling\n3- Add Child\n4- Add Spouse\n5- Exit\n")
+	# 		choice = input()
+	# 		os.system('clear')
+	# 		if choice == '1':
+	# 			people[name].addParent(relative)
+	# 			people[relative].addChild(name)
+	# 		elif choice == '2':
+	# 			people[name].addSibling(relative)
+	# 			people[relative].addSibling(name)
+	# 		elif choice == '3':
+	# 			people[name].addChild(relative)
+	# 			people[relative].addParent(name)
+	# 		elif choice == '4':
+	# 			people[name].addSpouse(relative)
+	# 			people[relative].addSpouse(name)
+	# 	elif choice == '5':
+	# 		plot()
+	# 	elif choice == '6':
+	# 		break
+	# 	print(people)
