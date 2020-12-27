@@ -53,21 +53,19 @@ def plot():
 		if i not in peeps.keys(): 
 			peeps[i] = chr(c)
 			c+=1
-		dot.node(p[i], i)
+			dot.node(peeps[i], i)
 		
-		if people[i].spouse != None:
-			if people[i].spouse not in peeps.keys(): 
-				peeps[people[i].spouse] = chr(c)
-				c += 1
-			edges.append(peeps[i] + peeps[people[i].spouse])
-		
-		if len(people[i].parents) > 0:
-			for j in people[i].parents:
-				edges.append(people[i].name + j)
+		if len(people[i].children) > 0:
+			for j in people[i].children:
+				if j not in peeps.keys(): 
+					peeps[j] = chr(c)
+					c += 1
+					dot.node(peeps[j], j)
+				edges.append(peeps[i] + peeps[j])
 
 	print(dot.source)
 	print(edges)
-	dot.edges = (edges)
+	dot.edges(edges)
 	dot.render('test-output/familyTree.gv', view=True)
 
 if __name__ == "__main__":

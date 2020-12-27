@@ -1,7 +1,45 @@
 digraph {
-	"Khizar Ahmad Aziz" [label="Khizar Ahmad Aziz"]
-	"Hamza Aziz" [label="Hamza Aziz"]
-	"Zainab Aziz" [label="Zainab Aziz"]
-	"Aziz Munir" [label="Aziz Munir"]
-	"Huma Aziz" [label="Huma Aziz"]
+	A [label="Hamza Aziz"]
+	B [label="Aziz Munir"]
+	C [label="Zainab Aziz"]
+	D [label="Khizar Ahmad Aziz"]
+	E [label="Huma Aziz"]
+	F [label="Ghiasuddin Khan"]
+	G [label="Omar Khan"]
+	H [label="Ali Khan"]
+	I [label="Omara Khan"]
+	J [label="Shiekh Muhammad Munir"]
+	K [label="Tahseen Khan"]
+	L [label="Zoya Khan"]
+	M [label="Amina Khan"]
+	N [label="Malaika Khan"]
+	O [label="Zaki Khan"]
+	P [label="Nadia Khan"]
+	Q [label="Shiekh Muhammad Saeed"]
+	R [label=Chand]
+	B -> A
+	B -> C
+	B -> D
+	E -> A
+	E -> C
+	E -> D
+	F -> E
+	F -> G
+	F -> H
+	F -> I
+	J -> B
+	K -> E
+	K -> G
+	K -> H
+	G -> L
+	G -> M
+	G -> N
+	G -> O
+	P -> L
+	P -> M
+	P -> N
+	P -> O
+	Q -> K
+	R -> J
+	R -> Q
 }
