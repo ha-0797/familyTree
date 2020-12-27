@@ -46,26 +46,20 @@ def plot():
 	c = 65
 	peeps = {}
 	edges = []
-	dot = Digraph()
+	dot = Digraph(name='pet-shop', node_attr={'shape': 'plaintext'})
 	
 	for i in people.keys():
-		
+		dot.attr('node', shape='egg')
 		if i not in peeps.keys(): 
-			peeps[i] = chr(c)
-			c+=1
-			dot.node(peeps[i], i)
+			dot.node(i)
 		
 		if len(people[i].children) > 0:
 			for j in people[i].children:
-				if j not in peeps.keys(): 
-					peeps[j] = chr(c)
-					c += 1
-					dot.node(peeps[j], j)
-				edges.append(peeps[i] + peeps[j])
+				dot.edge(people[i].name, j)
 
 	print(dot.source)
 	print(edges)
-	dot.edges(edges)
+	# dot.edges(edges)
 	dot.render('test-output/familyTree.gv', view=True)
 
 if __name__ == "__main__":

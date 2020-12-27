@@ -1,69 +1,109 @@
-digraph {
-	A [label="Hamza Aziz"]
-	B [label="Aziz Munir"]
-	C [label="Zainab Aziz"]
-	D [label="Khizar Ahmad Aziz"]
-	E [label="Huma Aziz"]
-	F [label="Ghiasuddin Khan"]
-	G [label="Omar Khan"]
-	H [label="Ali Khan"]
-	I [label="Omara Khan"]
-	J [label="Shiekh Muhammad Munir"]
-	K [label="Fauzia Shahid"]
-	L [label="Ayesha Dar"]
-	M [label="Tahseen Khan"]
-	N [label="Zoya Khan"]
-	O [label="Amina Khan"]
-	P [label="Malaika Khan"]
-	Q [label="Zaki Khan"]
-	R [label="Nadia Khan"]
-	S [label="Shiekh Muhammad Saeed"]
-	T [label=Chand]
-	U [label=Shams]
-	V [label="Ahmad Khan"]
-	W [label="Farhat Munir"]
-	X [label="Muneeb Shahid"]
-	Y [label="Amna Adeel"]
-	Z [label="Bilal Dar"]
-	"[" [label="Babar Dar"]
-	"\" [label="Muhammad Shahid"]
-	B -> A
-	B -> C
-	B -> D
-	E -> A
-	E -> C
-	E -> D
-	F -> E
-	F -> G
-	F -> H
-	F -> I
-	J -> B
-	J -> K
-	J -> L
-	M -> E
-	M -> G
-	M -> H
-	G -> N
-	G -> O
-	G -> P
-	G -> Q
-	R -> N
-	R -> O
-	R -> P
-	R -> Q
-	S -> M
-	T -> J
-	T -> S
-	U -> F
-	V -> U
-	V -> T
-	W -> B
-	W -> K
-	W -> L
-	K -> X
-	K -> Y
-	L -> Z
-	"[" -> Z
-	"\" -> X
-	"\" -> Y
+digraph "pet-shop" {
+	node [shape=plaintext]
+	node [shape=egg]
+	"Hamza Aziz"
+	node [shape=egg]
+	"Aziz Munir"
+	"Aziz Munir" -> "Hamza Aziz"
+	"Aziz Munir" -> "Zainab Aziz"
+	"Aziz Munir" -> "Khizar Ahmad Aziz"
+	node [shape=egg]
+	"Huma Aziz"
+	"Huma Aziz" -> "Hamza Aziz"
+	"Huma Aziz" -> "Zainab Aziz"
+	"Huma Aziz" -> "Khizar Ahmad Aziz"
+	node [shape=egg]
+	"Zainab Aziz"
+	node [shape=egg]
+	"Khizar Ahmad Aziz"
+	node [shape=egg]
+	"Ghiasuddin Khan"
+	"Ghiasuddin Khan" -> "Huma Aziz"
+	"Ghiasuddin Khan" -> "Omar Khan"
+	"Ghiasuddin Khan" -> "Ali Khan"
+	"Ghiasuddin Khan" -> "Omara Khan"
+	node [shape=egg]
+	"Shiekh Muhammad Munir"
+	"Shiekh Muhammad Munir" -> "Aziz Munir"
+	"Shiekh Muhammad Munir" -> "Fauzia Shahid"
+	"Shiekh Muhammad Munir" -> "Ayesha Dar"
+	node [shape=egg]
+	"Tahseen Khan"
+	"Tahseen Khan" -> "Huma Aziz"
+	"Tahseen Khan" -> "Omar Khan"
+	"Tahseen Khan" -> "Ali Khan"
+	node [shape=egg]
+	"Omar Khan"
+	"Omar Khan" -> "Zoya Khan"
+	"Omar Khan" -> "Amina Khan"
+	"Omar Khan" -> "Malaika Khan"
+	"Omar Khan" -> "Zaki Khan"
+	node [shape=egg]
+	"Nadia Khan"
+	"Nadia Khan" -> "Zoya Khan"
+	"Nadia Khan" -> "Amina Khan"
+	"Nadia Khan" -> "Malaika Khan"
+	"Nadia Khan" -> "Zaki Khan"
+	node [shape=egg]
+	"Zoya Khan"
+	node [shape=egg]
+	"Amina Khan"
+	node [shape=egg]
+	"Malaika Khan"
+	node [shape=egg]
+	"Zaki Khan"
+	node [shape=egg]
+	"Ali Khan"
+	node [shape=egg]
+	"Omara Khan"
+	node [shape=egg]
+	"Shiekh Muhammad Saeed"
+	"Shiekh Muhammad Saeed" -> "Tahseen Khan"
+	node [shape=egg]
+	Chand
+	Chand -> "Shiekh Muhammad Munir"
+	Chand -> "Shiekh Muhammad Saeed"
+	node [shape=egg]
+	Shams
+	Shams -> "Ghiasuddin Khan"
+	Shams -> "Allahuddin Khan"
+	node [shape=egg]
+	"Ahmad Khan"
+	"Ahmad Khan" -> Shams
+	"Ahmad Khan" -> Chand
+	node [shape=egg]
+	"Farhat Munir"
+	"Farhat Munir" -> "Aziz Munir"
+	"Farhat Munir" -> "Fauzia Shahid"
+	"Farhat Munir" -> "Ayesha Dar"
+	node [shape=egg]
+	"Fauzia Shahid"
+	"Fauzia Shahid" -> "Muneeb Shahid"
+	"Fauzia Shahid" -> "Amna Adeel"
+	node [shape=egg]
+	"Ayesha Dar"
+	"Ayesha Dar" -> "Bilal Dar"
+	"Ayesha Dar" -> "Tuba Dar"
+	node [shape=egg]
+	"Babar Dar"
+	"Babar Dar" -> "Bilal Dar"
+	"Babar Dar" -> "Tuba Dar"
+	node [shape=egg]
+	"Bilal Dar"
+	node [shape=egg]
+	"Muhammad Shahid"
+	"Muhammad Shahid" -> "Muneeb Shahid"
+	"Muhammad Shahid" -> "Amna Adeel"
+	node [shape=egg]
+	"Muneeb Shahid"
+	node [shape=egg]
+	Ameena
+	Ameena -> "Ghiasuddin Khan"
+	Ameena -> "Allahuddin Khan"
+	node [shape=egg]
+	"Tuba Dar"
+	node [shape=egg]
+	"Amna Adeel"
+	node [shape=egg]
+	"Allahuddin Khan"
 }
