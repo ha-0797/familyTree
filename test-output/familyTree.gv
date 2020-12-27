@@ -9,14 +9,24 @@ digraph {
 	H [label="Ali Khan"]
 	I [label="Omara Khan"]
 	J [label="Shiekh Muhammad Munir"]
-	K [label="Tahseen Khan"]
-	L [label="Zoya Khan"]
-	M [label="Amina Khan"]
-	N [label="Malaika Khan"]
-	O [label="Zaki Khan"]
-	P [label="Nadia Khan"]
-	Q [label="Shiekh Muhammad Saeed"]
-	R [label=Chand]
+	K [label="Fauzia Shahid"]
+	L [label="Ayesha Dar"]
+	M [label="Tahseen Khan"]
+	N [label="Zoya Khan"]
+	O [label="Amina Khan"]
+	P [label="Malaika Khan"]
+	Q [label="Zaki Khan"]
+	R [label="Nadia Khan"]
+	S [label="Shiekh Muhammad Saeed"]
+	T [label=Chand]
+	U [label=Shams]
+	V [label="Ahmad Khan"]
+	W [label="Farhat Munir"]
+	X [label="Muneeb Shahid"]
+	Y [label="Amna Adeel"]
+	Z [label="Bilal Dar"]
+	"[" [label="Babar Dar"]
+	"\" [label="Muhammad Shahid"]
 	B -> A
 	B -> C
 	B -> D
@@ -28,18 +38,32 @@ digraph {
 	F -> H
 	F -> I
 	J -> B
-	K -> E
-	K -> G
-	K -> H
-	G -> L
-	G -> M
+	J -> K
+	J -> L
+	M -> E
+	M -> G
+	M -> H
 	G -> N
 	G -> O
-	P -> L
-	P -> M
-	P -> N
-	P -> O
-	Q -> K
-	R -> J
+	G -> P
+	G -> Q
+	R -> N
+	R -> O
+	R -> P
 	R -> Q
+	S -> M
+	T -> J
+	T -> S
+	U -> F
+	V -> U
+	V -> T
+	W -> B
+	W -> K
+	W -> L
+	K -> X
+	K -> Y
+	L -> Z
+	"[" -> Z
+	"\" -> X
+	"\" -> Y
 }
