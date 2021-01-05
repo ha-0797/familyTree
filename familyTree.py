@@ -2,24 +2,7 @@ import os
 import json
 from graphviz import Digraph
 import tkinter as tk
-
-class Person(object):
-	"""docstring for Person"""
-	def __init__(self, name):
-		super(Person, self).__init__()
-		self.name 		= name
-		self.parents 	= []
-		self.children	= []
-		self.spouse		= None
-
-	def addParent(self, P):
-		self.parents.append(P)
-
-	def addChild(self, C):
-		self.children.append(C)
-
-	def addSpouse(self, S):
-		self.spouse = S
+from person import Person
 
 people = {}
 
@@ -62,58 +45,68 @@ def plot():
 	# dot.edges(edges)
 	dot.render('test-output/familyTree.gv', view=True)
 
+class add(object):
+	def __init__(self, master):
+		self.master = master
+		self.frame = tk.Frame(self.master)
+        
+		self.label1 = tk.Label(self.frame, text="Name")
+		self.box1 = tk.Entry(self.frame)
+		self.label2 = tk.Label(self.frame, text="Parent 1")
+		self.box2 = tk.Entry(self.frame)
+		self.label3 = tk.Label(self.frame, text="Parent 2")
+		self.box3 = tk.Entry(self.frame)
+		self.button = tk.Button(self.frame, text= "Submit", command= self.submit)
+
+		self.label1.pack()
+		self.box1.pack()
+		self.label2.pack()
+		self.box2.pack()
+		self.label3.pack()
+		self.box3.pack()
+		self.button.pack()
+		self.frame.pack()
+
+	def submit(self):
+		global people
+		name = self.box1.get()
+		if name not in people.keys():
+			newPerson = Person(name)
+			people[name] = newPerson
+			parent1 = self.box2.get()
+			parent2 = self.box3.get()
+			if parent1 != '' and parent2 != '':
+				newPerson.addParent(parent1)
+				newPerson.addParent(parent2)
+				people[parent1].addChild(Name)
+				people[parent2].addChild(name)
+		self.master.destroy()
+
+class mainWindow(object):
+	def __init__(self, master):
+		self.master = master
+		self.frame = tk.Frame(self.master)
+		self.button1 = tk.Button(self.frame, text = 'Load', width = 25, command = load)
+		self.button2 = tk.Button(self.frame, text = 'Save', width = 25, command = save)
+		self.button3 = tk.Button(self.frame, text = 'Add Person', width = 25, command = self.new_window)
+		self.button4 = tk.Button(self.frame, text = 'Plot', width = 25, command = plot)        
+		self.button5 = tk.Button(self.frame, text = 'Quit', width = 25, command = self.close_windows)        
+		self.button1.pack()
+		self.button2.pack()
+		self.button3.pack()
+		self.button4.pack()
+		self.button5.pack()
+		self.frame.pack()
+
+	def new_window(self):
+		self.newWindow = tk.Toplevel(self.master)
+		self.app = add(self.newWindow)
+
+	def close_windows(self):
+		self.master.destroy()
+
 if __name__ == "__main__":
 
-	window = tk.Tk()
-	Load = tk.Button(text= "Load", command=load)
-	Save = tk.Button(text= "Save", command=save)
-	addPerson = tk.Button(text= "Add Person", command=load)
-	Plot = tk.Button(text= "Plot", command=plot)
-	Load.pack()
-	Save.pack()
-	addPerson.pack()
-	Plot.pack()
-	window.mainloop()
-
-
-	# Load
-	# while(1):
-	# 	print("1- Load\n2- Save\n3- Add Person\n4- Add Relation\n5- Plot\n6- Exit\n")
-	# 	choice = input()
-	# 	os.system('clear')
-	# 	if choice == '1':
-	# 		people = load()
-	# 	elif choice == '2':
-	# 		save()
-	# 	elif choice == '3':
-	# 		print("Enter Name:", end=" ")
-	# 		name = input()
-	# 		if name not in people.keys():
-	# 			p = Person(name)
-	# 			people[name] = p
-	# 	elif choice == '4':
-	# 		print("Add relation to:", end=" ")
-	# 		name = input()
-	# 		print("Relative Name:", end=" ")
-	# 		relative = input()
-	# 		person = people[name]
-	# 		print("1- Add Parent\n2- Add Sibling\n3- Add Child\n4- Add Spouse\n5- Exit\n")
-	# 		choice = input()
-	# 		os.system('clear')
-	# 		if choice == '1':
-	# 			people[name].addParent(relative)
-	# 			people[relative].addChild(name)
-	# 		elif choice == '2':
-	# 			people[name].addSibling(relative)
-	# 			people[relative].addSibling(name)
-	# 		elif choice == '3':
-	# 			people[name].addChild(relative)
-	# 			people[relative].addParent(name)
-	# 		elif choice == '4':
-	# 			people[name].addSpouse(relative)
-	# 			people[relative].addSpouse(name)
-	# 	elif choice == '5':
-	# 		plot()
-	# 	elif choice == '6':
-	# 		break
-	# 	print(people)
+	root = tk.Tk()
+	app = mainWindow(root)
+	root.mainloop()

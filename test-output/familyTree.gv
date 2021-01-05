@@ -1,6 +1,23 @@
 digraph "Family-Tree" {
 	node [shape=plaintext]
 	node [shape=egg]
+	Shaukat
+	Shaukat -> "Tahseen Khan"
+	Shaukat -> Kaki
+	Shaukat -> Saida
+	node [shape=egg]
+	"Shiekh Abdul Majeed"
+	"Shiekh Abdul Majeed" -> "Shiekh Muhammad Saeed"
+	"Shiekh Abdul Majeed" -> "Shiekh Muhammad Munir"
+	"Shiekh Abdul Majeed" -> Naseem
+	"Shiekh Abdul Majeed" -> Billo
+	"Shiekh Abdul Majeed" -> Akhtar
+	"Shiekh Abdul Majeed" -> Riffat
+	node [shape=egg]
+	"Zainab Khan"
+	"Zainab Khan" -> Shams
+	"Zainab Khan" -> Chand
+	node [shape=egg]
 	"Hamza Aziz"
 	node [shape=egg]
 	"Aziz Munir"
@@ -32,6 +49,7 @@ digraph "Family-Tree" {
 	"Tahseen Khan" -> "Huma Aziz"
 	"Tahseen Khan" -> "Omar Khan"
 	"Tahseen Khan" -> "Ali Khan"
+	"Tahseen Khan" -> "Omara Khan"
 	node [shape=egg]
 	"Omar Khan"
 	"Omar Khan" -> "Zoya Khan"
@@ -59,14 +77,25 @@ digraph "Family-Tree" {
 	node [shape=egg]
 	"Shiekh Muhammad Saeed"
 	"Shiekh Muhammad Saeed" -> "Tahseen Khan"
+	"Shiekh Muhammad Saeed" -> Kaki
+	"Shiekh Muhammad Saeed" -> Saida
 	node [shape=egg]
 	Chand
 	Chand -> "Shiekh Muhammad Munir"
 	Chand -> "Shiekh Muhammad Saeed"
+	Chand -> Naseem
+	Chand -> Billo
+	Chand -> Akhtar
+	Chand -> Riffat
 	node [shape=egg]
 	Shams
 	Shams -> "Ghiasuddin Khan"
 	Shams -> "Allahuddin Khan"
+	Shams -> "Nasiruddin Khan"
+	Shams -> "Naseeruddin Khan"
+	Shams -> "Salahuddin Khan"
+	Shams -> Fari
+	Shams -> Mini
 	node [shape=egg]
 	"Ahmad Khan"
 	"Ahmad Khan" -> Shams
@@ -80,6 +109,7 @@ digraph "Family-Tree" {
 	"Fauzia Shahid"
 	"Fauzia Shahid" -> "Muneeb Shahid"
 	"Fauzia Shahid" -> "Amna Adeel"
+	"Fauzia Shahid" -> Yusra
 	node [shape=egg]
 	"Ayesha Dar"
 	"Ayesha Dar" -> "Bilal Dar"
@@ -94,16 +124,52 @@ digraph "Family-Tree" {
 	"Muhammad Shahid"
 	"Muhammad Shahid" -> "Muneeb Shahid"
 	"Muhammad Shahid" -> "Amna Adeel"
+	"Muhammad Shahid" -> Yusra
 	node [shape=egg]
 	"Muneeb Shahid"
 	node [shape=egg]
 	Ameena
 	Ameena -> "Ghiasuddin Khan"
 	Ameena -> "Allahuddin Khan"
+	Ameena -> "Nasiruddin Khan"
+	Ameena -> "Naseeruddin Khan"
+	Ameena -> "Salahuddin Khan"
+	Ameena -> Fari
+	Ameena -> Mini
 	node [shape=egg]
 	"Tuba Dar"
 	node [shape=egg]
 	"Amna Adeel"
 	node [shape=egg]
 	"Allahuddin Khan"
+	node [shape=egg]
+	"Nasiruddin Khan"
+	node [shape=egg]
+	"Naseeruddin Khan"
+	node [shape=egg]
+	"Salahuddin Khan"
+	node [shape=egg]
+	Fari
+	node [shape=egg]
+	Mini
+	node [shape=egg]
+	Naseem
+	node [shape=egg]
+	Billo
+	node [shape=egg]
+	Akhtar
+	node [shape=egg]
+	Riffat
+	node [shape=egg]
+	Kaki
+	node [shape=egg]
+	Saida
+	Saida -> "Sumbal Seemab"
+	node [shape=egg]
+	"Noor al Ameen Pasha"
+	"Noor al Ameen Pasha" -> "Sumbal Seemab"
+	node [shape=egg]
+	"Sumbal Seemab"
+	node [shape=egg]
+	Yusra
 }
